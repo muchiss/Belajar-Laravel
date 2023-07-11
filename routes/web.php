@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\CatController;
+use App\Http\Controllers\HandlerController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -37,6 +38,7 @@ Route::get('/gawan', function () {
 
 
 Route::resource('cats', CatController::class);
+Route::resource('handlers', HandlerController::class);
 
 Route::get('/handler', function () {
     return view('handler');
