@@ -8,7 +8,7 @@ $pretitle = 'Ubah Data Kucing';
 @section('konten')
 <div class="card">
     <div class="card-body">
-        <form class="card" action="{{ route('cats.berubah', $cat->id) }}" method="post">
+        <form class="card" action="{{ route('cats.update', $cat->id) }}" method="post">
             @csrf
             @method('PUT')
             <div class="card-header">

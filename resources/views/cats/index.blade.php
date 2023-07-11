@@ -6,7 +6,7 @@ $pretitle = 'Semua Data Kucing';
 @endphp
 
 @push('page-action')
-<a href="{{ route('cats.new') }}" class="btn btn-info">Tambah Data</a>
+<a href="{{ route('cats.create') }}" class="btn btn-info">Tambah Data</a>
 @endpush
 
 @section('konten')
@@ -29,8 +29,8 @@ $pretitle = 'Semua Data Kucing';
           <td>{{$cat->jenis_cat}}</td>
           <td>{{$cat->umur_cat}}</td>
           <td>
-            <a href="{{ route ('cats.ubah', $cat->id )}}" class="btn btn-orange btn-sm mb-1">Ubah</a>
-            <form action="{{ route ('cats.hapus', $cat->id )}}" method="post">
+            <a href="{{ route ('cats.edit', $cat->id )}}" class="btn btn-orange btn-sm mb-1">Ubah</a>
+            <form action="{{ route ('cats.destroy', $cat->id )}}" method="post">
               @csrf
               @method('DELETE')
               <input type="submit" value="Hapus" class="btn btn-danger btn-sm">

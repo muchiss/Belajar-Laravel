@@ -8,7 +8,7 @@ $pretitle = 'Tambah Data Kucing';
 @section('konten')
 <div class="card">
     <div class="card-body">
-        <form class="card" action="{{ route('cats.isi') }}" method="post">
+        <form class="card" action="{{ route('cats.store') }}" method="post">
             @csrf
             <div class="card-header">
                 <h3 class="card-title">Isi Data</h3>

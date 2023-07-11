@@ -15,12 +15,12 @@ class CatController extends Controller
         ]);
     }
 
-    public function new()
+    public function create()
     {
-        return view('cats.new');
+        return view('cats.create');
     }
 
-    public function isi(Request $request)
+    public function store(Request $request)
     {
         // dd('Iso');
         $this->validate($request, [
@@ -42,17 +42,17 @@ class CatController extends Controller
         return redirect()->route('cats.index');
     }
 
-    public function ubah($id)
+    public function edit($id)
     {
         // dd($id);
         $cat = Cat::find($id);
 
-        return view('cats/ubah', [
+        return view('cats/edit', [
             'cat' => $cat,
         ]);
     }
 
-    public function berubah(Request $request, $id)
+    public function update(Request $request, $id)
     {
         $this->validate($request, [
             'nama_cat' => ['required'],
@@ -73,7 +73,7 @@ class CatController extends Controller
         return redirect()->route('cats.index');
     }
 
-    public function Hapus($id)
+    public function destroy($id)
     {
         $cat = Cat::find($id);
 

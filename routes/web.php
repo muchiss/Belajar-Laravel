@@ -23,17 +23,20 @@ Route::get('/gawan', function () {
     return view('gawan');
 });
 
-Route::get('/cats', [CatController::class, 'index'])->name('cats.index');
+// Route::get('/cats', [CatController::class, 'index'])->name('cats.index');
 
-Route::get('/cats/new', [CatController::class, 'new'])->name('cats.new');
+// Route::get('/cats/create', [CatController::class, 'create'])->name('cats.create');
 
-Route::post('/cats', [CatController::class, 'isi'])->name('cats.isi');
+// Route::post('/cats', [CatController::class, 'store'])->name('cats.store');
 
-Route::get('/cats/{id}/ubah', [CatController::class, 'ubah'])->name('cats.ubah');
+// Route::get('/cats/{id}/edit', [CatController::class, 'edit'])->name('cats.edit');
 
-Route::put('/cats/{id}', [CatController::class, 'berubah'])->name('cats.berubah');
+// Route::put('/cats/{id}', [CatController::class, 'update'])->name('cats.update');
 
-Route::delete('/cats/{id}', [CatController::class, 'hapus'])->name('cats.hapus');
+// Route::delete('/cats/{id}', [CatController::class, 'destroy'])->name('cats.destroy');
+
+
+Route::resource('cats', CatController::class);
 
 Route::get('/handler', function () {
     return view('handler');
